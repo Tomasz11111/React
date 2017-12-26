@@ -1,0 +1,32 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+}
+.countersContainer {
+	width: 800px;
+	height: 200px;
+	margin: 0 auto;	
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	
+}
+.buttonInc, .buttonDec {
+	width: 200px;
+	height: 50px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.buttonInc {
+	background-color: green;
+}
+.buttonDec {
+	background-color: red;
+}
