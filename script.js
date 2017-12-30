@@ -38,40 +38,42 @@ var Movie = React.createClass({
 	},
 	render: function() {
       return (
-		React.createElement('li', {},  
-            // tutaj odwołujemy się do props'a 
+					React.createElement('li', {},  
+						// tutaj odwołujemy się do props'a 
             // linia 65. -> stąd dostajemy obiekt movieItem
-			React.createElement('h2', {}, this.props.movieItem.title), //tu pewnie powinienem wstawić MovieTitle ale nie wiem jak
-			React.createElement('p', {}, this.props.movieItem.desc), //te dwie linie powinienem scalić w jedną MovieDescription, ale nie wiem jak
-			React.createElement('img', {src: this.props.movieItem.src})
-		)
-      );					
+						React.createElement(MovieTitle, {title: this.props.movieItem.title}),
+						React.createElement(MovieDescription, {desc: this.props.movieItem.desc, src: this.props.movieItem.src})
+					)
+			);
 	}
 });
 
 var MovieTitle = React.createClass({
 	propTypes: {
-		movieItem: React.PropTypes.object.isRequired,
+		title: React.PropTypes.string.isRequired,
 	},
 	render: function() {
 		return (
-			React.createElement('h2', {}, this.props.movieItem.title)
+			React.createElement('h2', {}, this.props.title)
 		)
 	}
 	
 });
 
-/*var MovieDescription = React.createClass({
+var MovieDescription = React.createClass({
 	propTypes: {
-		movieItem: React.PropTypes.object.isRequired,
+		desc: React.PropTypes.string.isRequired,
+		src: React.PropTypes.string.isRequired
 	},
 	render: function() {
 		return (
-			React.createElement('p', {}, this.props.movieItem.desc),
-			React.createElement('img', {src: this.props.movieItem.src})
+			React.createElement('div', {}, 
+				React.createElement('p', {}, this.props.desc),
+				React.createElement('img', {src: this.props.src})
 			)
+		)
 	}
-})*/
+})
 
 
 var MoviesList = React.createClass({
