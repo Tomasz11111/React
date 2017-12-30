@@ -20,34 +20,7 @@ Search = React.createClass({
 			
 		}
 	},
-	handleSearch: function(searchingText) {  // 1.
-		this.setState({
-		  loading: true  // 2.
-		});
-		this.getGif(searchingText, function(gif) {  // 3.
-		  this.setState({  // 4
-			loading: false,  // a
-			gif: gif,  // b
-			searchingText: searchingText  // c
-		  });
-		}.bind(this));
-  	},
-	getGif: function(searchingText, callback) {
-		var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
-		var xhr = new XMLHttpRequest();
-		xhr.open('GET', url);
-		xhr.onload = function() {
-			if (xhr.status === 200) {
-				var data = JSON.parse(xhr.responseText).data;
-				var gif = {
-					url: data.fixed_width_downsampled_url,
-					sourceUrl: url
-				};
-				callback(gif);
-			}
-		};
-	xhr.send();
-	},
+	
 	
 	render: function() {
 		var styles = {
