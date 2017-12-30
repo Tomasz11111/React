@@ -1,47 +1,33 @@
-var contacts = [
-	{
-		id: 1,
-		firstName: 'Jan',
-		lastName: 'Nowak',
-		email: 'jan.nowak@example.com',
+App = React.createClass({
+	
+	getInitialState() {
+		return {
+			loading: false,
+			searchingText: '',
+			gif: {}
+		};
 	},
-	{
-		id: 2,
-		firstName: 'Zbigniew',
-		lastName: 'Koziol',
-		email: 'zbigniew.koziol@example.com',
-		
-	},
-	{
-		id: 3,
-		firstName: 'Adam',
-		lastName: 'Kowalski',
-		email: 'adam.kowalski@example.com',
-	}
-];
-
-var contactForm = {
-	firstName: '',
-	lastName: '',
-	email: ''
-};
-
-var App = React.createClass({ 
 	render: function() {
+		
+		var styles = {
+			margin: '0 auto',
+			textAlign: 'center',
+			width: '90%'
+			
+		};
+		
 		return (
-			React.createElement('div', {className: 'app'}, 
-			  React.createElement(ContactForm, {contact: contactForm}),
-			  React.createElement(Contacts, {items: contacts}, {})
-						)
-			);
+			<div style={styles}>
+				<h1>Wyszukiwarka GIFów! </h1>
+				<p>Znajdź gifa na <a href='http://giphy.com'>giphy</a>.  Naciskaj enter, aby pobrać kolejne gify.</p>
+				<Search onSearch={this.handleSearch}/>
+				<Gif 
+					loading={this.state.loading}
+					url={this.state.gif.url}
+					sourceUrl={this.state.gif.sourceUrl}
+			/>
+			</div>
+		
+		);
 	}
 });
-
-
-
-
-
-
-
-
-

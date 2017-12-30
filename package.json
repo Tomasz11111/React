@@ -1,22 +1,21 @@
 {
-  "name": "react",
+  "name": "y",
   "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
+  "description": "y",
+  "main": "y",
   "scripts": {
     "start": "http-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tomasz11111/React.git"
+    "url": "y"
   },
-  "author": "",
+  "keywords": [
+    "y"
+  ],
+  "author": "y",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Tomasz11111/React/issues"
-  },
-  "homepage": "https://github.com/Tomasz11111/React#readme",
   "devDependencies": {
-    "server-http": "^1.0.1"
+    "http-server": "^0.10.0"
   }
 }
