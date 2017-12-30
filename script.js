@@ -49,7 +49,7 @@ var Movie = React.createClass({
 	}
 });
 
-/*var MovieTitle = React.createClass({
+var MovieTitle = React.createClass({
 	propTypes: {
 		movieItem: React.PropTypes.object.isRequired,
 	},
@@ -59,7 +59,7 @@ var Movie = React.createClass({
 		)
 	}
 	
-});*/
+});
 
 /*var MovieDescription = React.createClass({
 	propTypes: {
