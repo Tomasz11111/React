@@ -42,7 +42,8 @@ var Movie = React.createClass({
 						// tutaj odwołujemy się do props'a 
             // linia 65. -> stąd dostajemy obiekt movieItem
 						React.createElement(MovieTitle, {title: this.props.movieItem.title}),
-						React.createElement(MovieDescription, {desc: this.props.movieItem.desc, src: this.props.movieItem.src})
+						React.createElement(MovieDescription, {desc: this.props.movieItem.desc}),
+						React.createElement(MovieImg, {src: this.props.movieItem.src})
 					)
 			);
 	}
@@ -62,18 +63,27 @@ var MovieTitle = React.createClass({
 
 var MovieDescription = React.createClass({
 	propTypes: {
-		desc: React.PropTypes.string.isRequired,
+		desc: React.PropTypes.string.isRequired		
+	},
+	render: function() {
+		return (
+			React.createElement('p', {}, this.props.desc)
+				
+			)
+		
+	}
+});
+
+var MovieImg = React.createClass({
+	propTypes: {
 		src: React.PropTypes.string.isRequired
 	},
 	render: function() {
 		return (
-			React.createElement('div', {}, 
-				React.createElement('p', {}, this.props.desc),
-				React.createElement('img', {src: this.props.src})
-			)
+			React.createElement('img', {src: this.props.src})
 		)
 	}
-})
+});
 
 
 var MoviesList = React.createClass({
