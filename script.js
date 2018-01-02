@@ -51,6 +51,10 @@ var Counter = React.createClass({
 	
 });
 
+function newApps(id) {
+	ReactDOM.render(React.createElement(Counter), document.getElementById(id));
+}
+var app = newApps('app');
+var app2 = newApps('app2');
+var app3 = newApps('app3');
 
-var app = React.createElement(Counter);
-ReactDOM.render(app, document.getElementById('app'));
